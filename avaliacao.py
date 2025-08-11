@@ -3,6 +3,15 @@ import time
 
 def informacao():
     print("Nehuma informação ainda")
+    
+def acordarelfo():
+    print("Nada")
+    
+def amarrar():
+    print("Nada")
+
+def explorar():
+    print("Nada")
 
 inicio=input("""Bem vindo, deseja iniciar um jogo?(S/N):""").upper()
 racas=["Humano","Humano","Humano","Humano","Anjo","Elfo","Humano","Humano","Humano","Humano","Humano","Elfo","Elfo","Elfo","Demonio","Anao","Anao","Anao","Anao","Homem Lagarto"]
@@ -33,6 +42,12 @@ while inicio == "S":
     print("Você olha para o lado e vê um elfo desmaiado, você percebe que está quase escurecendo...",time.sleep(1.5))
     print("O que você faz?")
     acao=input("Acordar o elfo(A) Amarrar o elfo(B) Explorar a floresta(E) Olhar se você tem algum recurso(O) nada(N)").upper()
+    if acao=="A":
+        acordarelfo()
+    elif acao=="B":
+        amarrar()
+    elif acao=="E":
+        explorar()
     inicio=input("Deseja continuar(S/N)").upper()
 
 print("""********Fim de jogo********""")
