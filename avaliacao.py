@@ -31,7 +31,8 @@ while inicio == "S":
     time.sleep(2)
     print("Você acordou em uma floresta e não se lembra de nada... ",time.sleep(1.5))
     print("Você olha para o lado e vê um elfo desmaiado, você percebe que está quase escurecendo...",time.sleep(1.5))
-    acao=input("O que você faz?\nAcordar o elfo(A) Amarrar o elfo(B) Explorar a floresta(E) Olhar se você tem algum recurso(O) nada(N)",time.sleep(1.5)).upper()
+    print("O que você faz?")
+    acao=input("Acordar o elfo(A) Amarrar o elfo(B) Explorar a floresta(E) Olhar se você tem algum recurso(O) nada(N)").upper()
     inicio=input("Deseja continuar(S/N)").upper()
 
 print("""********Fim de jogo********""")
