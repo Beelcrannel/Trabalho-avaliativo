@@ -139,6 +139,13 @@ while inicio == "S":
                 if acao=="A":
                     acordarelfo()
                     print("O Elfo acordou zangado! Ele estava dormindo depois de uma bebedeira!")
+                    print("Elfo: Ei Quem você acha que é? Eu sou um elfo da realeza, como ousas me acordar!!!")
+                    print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
+                    print("Elfo: Quem é você?")
+                    print("Eu: Eu não sei onde estamos, acordei agora também, o que fazemos? está anoitecendo...")
+                    print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
+                    input("Você deseja se juntar a ele?(S/N)")
+                    
                 elif acao=="B":
                     amarrar()
                     print("Você amarrou o elfo em uma árvore próxima. Ele não gostou muito e parece estar bem zangado.")
