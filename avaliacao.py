@@ -136,19 +136,39 @@ while inicio == "S":
                 print("O que você faz?")
 
                 acao=input("Acordar o elfo(A) Amarrar o elfo(B) Explorar a floresta(E) Olhar se você tem algum recurso(O) nada(N)").upper()
+                certo="N"
                 if acao=="A":
-                    acordarelfo()
-                    print("O Elfo acordou zangado! Ele estava dormindo depois de uma bebedeira!")
-                    print("Elfo: Ei Quem você acha que é? Eu sou um elfo da realeza, como ousas me acordar!!!")
-                    print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
-                    print("Elfo: Quem é você?")
-                    print("Eu: Eu não sei onde estamos, acordei agora também, o que fazemos? está anoitecendo...")
-                    print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
-                    input("Você deseja se juntar a ele?(S/N)")
+                    while certo != "S":
+                        acordarelfo()
+                        print("O Elfo acordou zangado! Ele estava dormindo depois de uma bebedeira!")
+                        print("Elfo: Ei Quem você acha que é? Eu sou um elfo da realeza, como ousas me acordar!!!")
+                        print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
+                        print("Elfo: Quem é você?")
+                        print("Você: Eu não sei onde estamos, acordei agora também, o que fazemos? está anoitecendo...")
+                        print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
+                        junto=input("Você deseja se juntar a ele?(S/N)").upper()
+                        if junto=="S":
+                            print("Vocês decidem explorar a floresta e encontram um acampamento")
+                            parceiro=1
+                            certo="S"
+                        elif junto=="N":
+                            print("Vocês se separam e depois de andar um pouco pela mata você encontra um acampamento")
+                            parceiro=0
+                            certo="S"
+                        else:
+                            print("Opção inválida")
                     
                 elif acao=="B":
-                    amarrar()
-                    print("Você amarrou o elfo em uma árvore próxima. Ele não gostou muito e parece estar bem zangado.")
+                    while certo != "S":
+                        amarrar()
+                        print("Você amarrou o elfo em uma árvore próxima. Ele não gostou muito e parece estar bem zangado.")
+                        print("Elfo: Como você ousa me amarrar eu sou um nobre seu #####, meus guardas vão te matar")
+                        print("Você: Que guardas?")
+                        print("Elfo: MALDITO! O QUE VOCÊ FEZ COM MEUS GUARDAS?")
+                        print("Você: Eu não fiz nada! eu acordei agora... Eu vi um elfo dormindo ao meu lado e que decisão melhor do que amara-lo?")
+                        print("Elfo: Ok, ok me solta e podemos nos juntar para sairmos daqui...")
+                        input("Você vai solta-lo?(S/N)").upper
+                        if 
                 elif acao=="E":
                     explorar()
                     print("Você saiu andando, mas se deparou com uma gangue de elfos zangados.")
