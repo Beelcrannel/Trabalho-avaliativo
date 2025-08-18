@@ -229,4 +229,209 @@ while inicio == "S":
         else:
             print("Essa opção não é válida!!!!")
     
+
     time.sleep(1)
+    if personagem["Raça"] == "Humano":
+        print("Se prepare....")
+        time.sleep(2)
+        print("Você acordou em uma floresta e não se lembra de nada... ")
+        time.sleep(1.5)
+        print("Você olha para o lado e vê um elfo desmaiado, você percebe que está quase escurecendo...")
+        time.sleep(1.5)
+        print("O que você faz?")
+
+        acao = input("Acordar o elfo(A) Amarrar o elfo(B) Explorar a floresta(E) Olhar inventário(O) Nada(N): ").upper()
+        
+        if acao == "A":
+            print("O Elfo acordou zangado! Ele estava dormindo depois de uma bebedeira!")
+            print("Elfo: Ei Quem você acha que é? Eu sou um elfo da realeza, como ousas me acordar!!!")
+            print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
+            print("Elfo: Quem é você?")
+            print("Você: Eu não sei onde estamos, acordei agora também, o que fazemos? está anoitecendo...")
+            print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
+            
+            junto = input("Você deseja se juntar a ele?(S/N): ").upper()
+            if junto == "S":
+                print("Vocês decidem explorar a floresta e vão até a cabana do elfo")
+                if not acordarelfo(personagem):
+                    print("============GAME OVER============")
+                    inicio = "N"
+            else:
+                print("Vocês se separam e depois de andar um pouco pela mata você encontra um acampamento")
+                explorar(personagem)
+        
+        elif acao == "B":
+            if not amarrar(personagem):
+                print("============GAME OVER============")
+                inicio = "N"
+        
+        elif acao == "E":
+            explorar(personagem)
+            print("Você saiu andando, mas se deparou com uma gangue de elfos zangados.")
+            gangue = {"Nome": "Gangue de Elfos", "Ataque": 18, "Vida": 40}
+            
+            if batalha(personagem, gangue):
+                personagem['Inventário'].extend(["Adaga", "Amuleto"])
+                print("Você derrotou os elfos e recolheu seus pertences!")
+                print("Depois você volta para o local que acordou e acorda o elfo")
+                if not acordarelfo(personagem):
+                    print("============GAME OVER============")
+                    inicio = "N"
+        
+        elif acao == "O":
+            olhar(personagem)
+            print("Nada aconteceu. Mas de repente quatro elfos surgiram ao seu redor.")
+            print("Do nada um dos elfos usa furtividade e corta sua garganta")
+            print("============GAME OVER============")
+            inicio = "N"
+        
+        elif acao == "N":
+            print("Parece que você não adquiriu nada ainda. Tente outra opção.")
+        
+        else:
+            print("Opção inválida")
+    
+    elif personagem["Raça"] == "Elfo":
+        print("Se prepare....")
+        time.sleep(2)
+        print("Você acorda em sua cabana na floresta após uma noite de bebedeira...")
+        time.sleep(1.5)
+        print("Ao olhar ao redor, você percebe um estranho(a) deitado(a) no chão perto de você...")
+        time.sleep(1.5)
+        print("O que você faz?")
+
+        acao = input("Acordar o estranho(A) Amarrar o estranho(B) Verificar inventário(V) Nada(N): ").upper()
+        
+        if acao == "A":
+            print("Você acorda o estranho, que parece confuso e desorientado.")
+            print("Estranho: Onde estou? Quem é você?")
+            print("Você explica que também não sabe como ele veio parar ali...")
+            time.sleep(1)
+            print("De repente, você ouve batidas na porta... São os demônios que vieram cobrar sua dívida!")
+            
+            escolha = input("Você irá Lutar(L), Fugir(F) ou Tentar negociar(N)? ").upper()
+            
+            if escolha == "L":
+                demonios = {"Nome": "Demônios Cobradores", "Ataque": 25, "Vida": 35}
+                if batalha(personagem, demonios):
+                    print("Vocês lutam juntos e derrotam os demônios! Ganhou +10 de ataque permanente!")
+                    personagem["Ataque"] += 10
+                else:
+                    print("============GAME OVER============")
+                    inicio = "N"
+            
+            elif escolha == "F":
+                print("Vocês tentam fugir, mas os demônios eram rápidos... Game Over!")
+                inicio = "N"
+            
+            else:
+                print("Você negocia com os demônios e consegue mais tempo para pagar a dívida.")
+                print("O estranho agora é seu aliado!")
+                personagem['Inventário'].append("Aliado Humano")
+        
+        elif acao == "B":
+            print("Você amarra o estranho, que acorda assustado.")
+            print("Estranho: O que está fazendo? Me solte!")
+            print("Nesse momento, os demônios chegam para cobrar sua dívida...")
+            time.sleep(1)
+            demonios = {"Nome": "Demônios Furiosos", "Ataque": 30, "Vida": 40}
+            
+            if batalha(personagem, demonios):
+                print("Milagrosamente você conseguiu derrotar os demônios!")
+            else:
+                print("Os demônios atacam vocês dois! Game Over!")
+                inicio = "N"
+        
+        elif acao == "V":
+            olhar(personagem)
+            explorar(personagem)
+        
+        else:
+            print("Você decide não fazer nada. Os demônios chegam e...")
+            demonios = {"Nome": "Demônios", "Ataque": 25, "Vida": 35}
+            
+            if batalha(personagem, demonios):
+                print("Você sobreviveu por sorte!")
+            else:
+                print("============GAME OVER============")
+                inicio = "N"
+
+    elif personagem["Raça"] == "Anjo":
+        print("Se prepare....")
+        time.sleep(2)
+        print("Você desce dos céus em meio a uma luz divina!")
+        time.sleep(1.5)
+        print("Ao seu redor, a floresta parece se acalmar com sua presença...")
+        time.sleep(1.5)
+        print("Você avista um elfo e um humano desacordados no chão.")
+        
+        acao = input("Acordá-los(A) Deixá-los(B) Observar de longe(O): ").upper()
+        
+        if acao == "A":
+            print("Você os acorda com seu toque divino.")
+            print("Ambos ficam maravilhados com sua presença e se tornam seus seguidores!")
+            personagem["Inventário"].append("Seguidores: Elfo e Humano")
+        
+        elif acao == "B":
+            print("Você decide não interferir e continua seu caminho.")
+            print("Enquanto caminha, encontra um artefato divino perdido!")
+            personagem["Inventário"].append("Artefato Divino")
+        
+        else:
+            print("Você observa de longe e percebe que demônios estão se aproximando...")
+            escolha = input("Intervir(I) ou Continuar observando(C)? ").upper()
+            
+            if escolha == "I":
+                print("Com um simples gesto, você banha os demônios em luz divina, purificando-os!")
+                print("Você ganhou +50 de ataque permanente!")
+                personagem["Ataque"] += 50
+            else:
+                print("Você permite que os eventos aconteçam naturalmente...")
+                print("Os demônios levam o elfo embora e o humano foge assustado.")
+        
+        print("Sua missão na terra está completa. Você retorna aos céus.")
+        inicio = "N"
+
+    elif personagem["Raça"] == "Demonio":
+        print("Se prepare....")
+        time.sleep(2)
+        print("Você surge das sombras em meio a um clarão de fogo!")
+        time.sleep(1.5)
+        print("O ar ao seu redor fica pesado e a floresta parece tremer com sua presença...")
+        time.sleep(1.5)
+        print("Você avista um elfo desacordado - aquele que deve uma dívida a você - e um estranho.")
+        
+        acao = input("Acordar o elfo(A) Levar o elfo(L) Assustar o estranho(S): ").upper()
+        
+        if acao == "A":
+            print("Você acorda o elfo com um golpe.")
+            print("Elfo: Não! Por favor, mais tempo! Eu vou pagar, eu juro!")
+            print("Estranho: O que está acontecendo?")
+            
+            escolha = input("Levar o elfo(L) ou Levar ambos(B)? ").upper()
+            
+            if escolha == "L":
+                print("Você leva o elfo embora para o inferno. Missão cumprida!")
+                personagem["Inventário"].append("Alma do Elfo")
+            else:
+                print("Você decide levar ambos para o inferno! Ganhou 2 almas!")
+                personagem["Inventário"].extend(["Alma do Elfo", "Alma do Humano"])
+        
+        elif acao == "L":
+            print("Você simplesmente pega o elfo inconsciente e o leva embora.")
+            print("O estranho acorda assustado com o barulho, mas você já desapareceu nas sombras.")
+            personagem["Inventário"].append("Alma do Elfo")
+        
+        else:
+            print("Você emite um rugido demoníaco que faz o estranho acordar em pânico!")
+            print("Estranho: AAAAAAH! DEMÔNIO!")
+            print("O estranho foge correndo, deixando para trás uma bolsa com itens valiosos.")
+            personagem["Inventário"].append("Bolsa de Itens Valiosos")
+        
+        print("Você retorna ao inferno com seu prêmio. Outra missão concluída!")
+        inicio = "N"
+
+    continuar = input("Deseja jogar novamente? (S/N): ").upper()
+    if continuar != "S":
+        inicio = "N"
+        print("Obrigado por jogar! Até a próxima!")
