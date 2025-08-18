@@ -33,22 +33,18 @@ def mostrar_classe():
     print("------------------------------------")
 
 def acordarelfo():
-    print("O elfo foi muito simpático com você, e lhe pediu se gostaria de o acompanhar em uma caminhada pela floresta.")
-    escolha=input("Você seguirá o elfo(S/N): ").upper
-    if escolha == "S":
-        print("Ao Seguir o elfo pela floresta, ele lhe mostrou a sua casa...")
-        time.sleep(1)
-        print("Porém em poucos minutos ressoaram batidas na porta...")
-        time.sleep(1)
-        print("Eram dois demônios! Eles vieram cobrar a dívida do elfo!!!! E agora o que fazer??!!")
-        time.sleep(1)
-        escolha2=input("Você irá Lutar contra os demônios ou irá Fugir?(L/F): ")
-        if escolha2=="L":
-            print("Parabéns! Os demônios eram fracos e você conseguiu os derrotar. Parece que o elfo está lhe devendo agora...")
-            personagem["Ataque"].append("+5 de ataque")
-        elif escolha2=="F":
-            print("Você não conseguiu fugir... Além dos demônios terem bloqueado as saídas o elfo também mandou você ficar...")
-            return escolha2
+    time.sleep(1)
+    print("Porém em poucos minutos ressoaram batidas na porta...")
+    time.sleep(1)
+    print("Eram dois demônios! Eles vieram cobrar a dívida do elfo!!!! E agora o que fazer??!!")
+    time.sleep(1)
+    escolha2=input("Você irá Lutar contra os demônios ou irá Fugir?(L/F): ")
+    if escolha2=="L":
+        print("Parabéns! Os demônios eram fracos e você conseguiu os derrotar. Parece que o elfo está lhe devendo agora...")
+        personagem["Ataque"].append("+5 de ataque")
+    elif escolha2=="F":
+        print("Você não conseguiu fugir... Além dos demônios terem bloqueado as saídas o elfo também mandou você ficar...")
+        return escolha2
     else:
         print("Faça outra escolha.")
 def amarrar():
@@ -139,7 +135,6 @@ while inicio == "S":
                 certo="N"
                 if acao=="A":
                     while certo != "S":
-                        acordarelfo()
                         print("O Elfo acordou zangado! Ele estava dormindo depois de uma bebedeira!")
                         print("Elfo: Ei Quem você acha que é? Eu sou um elfo da realeza, como ousas me acordar!!!")
                         print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
@@ -148,7 +143,8 @@ while inicio == "S":
                         print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
                         junto=input("Você deseja se juntar a ele?(S/N)").upper()
                         if junto=="S":
-                            print("Vocês decidem explorar a floresta e encontram um acampamento")
+                            print("Vocês decidem explorar a floresta e vão até a cabana do elfo")
+                            acordarelfo()
                             parceiro=1
                             certo="S"
                         elif junto=="N":
@@ -159,16 +155,8 @@ while inicio == "S":
                             print("Opção inválida")
                     
                 elif acao=="B":
-                    while certo != "S":
-                        amarrar()
-                        print("Você amarrou o elfo em uma árvore próxima. Ele não gostou muito e parece estar bem zangado.")
-                        print("Elfo: Como você ousa me amarrar eu sou um nobre seu #####, meus guardas vão te matar")
-                        print("Você: Que guardas?")
-                        print("Elfo: MALDITO! O QUE VOCÊ FEZ COM MEUS GUARDAS?")
-                        print("Você: Eu não fiz nada! eu acordei agora... Eu vi um elfo dormindo ao meu lado e que decisão melhor do que amara-lo?")
-                        print("Elfo: Ok, ok me solta e podemos nos juntar para sairmos daqui...")
-                        input("Você vai solta-lo?(S/N)").upper
-                        if 
+                    amarrar()
+                        
                 elif acao=="E":
                     explorar()
                     print("Você saiu andando, mas se deparou com uma gangue de elfos zangados.")
@@ -182,5 +170,8 @@ while inicio == "S":
                 else:
                     print("Opção inválida")
             elif raca_oficial=="Elfo":
+                print("Nada")
             elif raca_oficial=="Anjo":
+                print("Nada")
             else:
+                print("Nada")
