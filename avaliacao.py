@@ -172,7 +172,7 @@ while inicio == "S":
         "Ataque": 0,
         "Vida": 0
     }
-    
+
     escolha_valida = "N"
     while escolha_valida != "S":
         escolha = input(
@@ -227,8 +227,7 @@ while inicio == "S":
         elif racaas == "I":
             racas()
         else:
-            print("Essa opção não é válida!!!!")
-    
+            print("Essa opção não é válida!!!!")    
 
     time.sleep(1)
     if personagem["Raça"] == "Humano":
@@ -435,3 +434,4 @@ while inicio == "S":
     if continuar != "S":
         inicio = "N"
         print("Obrigado por jogar! Até a próxima!")
+        print("FIM!!!!!!")
