@@ -91,7 +91,7 @@ class Jogo:
             print("Elfo: Espera... Onde estamos... Por que estou com você no meio do nada?")
             print("Elfo: Quem é você?")
             print("Você: Eu não sei onde estamos, acordei agora também, o que fazemos? está anoitecendo...")
-            print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmo daqui...")
+            print("Elfo: Hum, onde estão meus guardas?... parece que não tem mais ninguém por aqui... Olha eu não confio nem um pouco em você, mas vamos tentar nos ajudar para sairmos daqui...")
             junto = input("Você deseja se juntar a ele?(S/N): ").upper()
             if junto == "S":
                 print("Vocês decidem explorar a floresta e vão até a cabana do elfo")
