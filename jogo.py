@@ -113,6 +113,8 @@ class Jogo:
                 personagem.inventario.extend(["Adaga", "Amuleto"])
                 print("Você derrotou os elfos e recolheu seus pertences!")
                 print("Depois você volta para o local que acordou e acorda o elfo")
+                print("Vocês saem andando até a a cabana do elfo...")
+                print("Vocês entram na cabana, e se sentam em frente a lareira")
                 if not self.acordar_elfo(personagem):
                     print("============GAME OVER============")
                     return False
@@ -142,7 +144,7 @@ class Jogo:
             print("Estranho: Onde estou? Quem é você?")
             print("Você explica que também não sabe como ele veio parar ali...")
             time.sleep(1)
-            print("De repente, você ouve batidas na porta... São os demônios que vieram cobrar sua dívida!")
+            print("De repente demônios se aproximam!!! Eles vieram cobrar a sua dívida!! O que fazer agora??!!")
             escolha = input("Você irá Lutar(L), Fugir(F) ou Tentar negociar(N)? ").upper()
             if escolha == "L":
                 demonios = {"Nome": "Demônios Cobradores", "Ataque": 25, "Vida": 35}
