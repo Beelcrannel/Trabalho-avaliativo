@@ -9,7 +9,7 @@ class Racas:
 
     @staticmethod
     def mostrar_racas():
-        print(""" "Nome":"Humano","Descrição":"Adaptável e Versátil","Ataque":15,"Vida":25,
-"Nome":"Elfo","Descrição":"Ágil e conectado com a natureza","Ataque":25,"Vida":50,
-"Nome":"Demônio","Descrição":"Poderoso","Ataque":50,"Vida":100,
-"Nome":"Anjo","Descrição":"Simplesmente divino, extremamente poderoso","Ataque":100,"Vida":200""")
+        print(""" Nome: Humano, Descrição: Adaptável e Versátil, Ataque: 15, Vida:25 ,
+Nome: Elfo, Descrição: Ágil e conectado com a natureza, Ataque: 25, Vida: 50,
+Nome: Demônio, Descrição: Poderoso, Ataque: 50, Vida: 100,
+Nome: Anjo, Descrição: Simplesmente divino, extremamente poderoso, Ataque: 100, Vida: 200""")
